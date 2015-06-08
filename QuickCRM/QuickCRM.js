@@ -15,8 +15,7 @@
 // <summary>
 // Qk is the main library and fastest way to use it.
 // </summary>
-Qk = function()
-{
+Qk = function() {
     // <summary>
     // Qk.Entity about entity form functions.
     // Qk.User about connected user.
@@ -31,8 +30,7 @@ Qk = function()
 // <summary>
 // Namespace with methods which the form entity is about.
 // </summary>
-Qk.Entity = function()
-{
+Qk.Entity = function() {
     return {
         Id: Xrm.Page.data.entity.getId(),
         Name: Xrm.Page.data.entity.getEntityName()
@@ -42,8 +40,7 @@ Qk.Entity = function()
 // <summary>
 // Namespace with methods which user information.
 // </summary>
-Qk.User = function()
-{
+Qk.User = function() {
     var getName = function()
     {
         if (!Xrm.Page.context.getUserName)  // CRM 2011                            
@@ -63,8 +60,7 @@ Qk.User = function()
 // <summary>
 // Namespace with methods to manipulate the form's fields/controls.
 // </summary>
-Qk.Field = function(fieldNamesParam)
-{
+Qk.Field = function(fieldNamesParam) {
     // Name of the field to manipulate.
     var fieldNames = fieldNamesParam;
 
@@ -294,8 +290,7 @@ Qk.Field = function(fieldNamesParam)
 // <summary>
 // Namespace to do the main operations with the form.
 // </summary>
-Qk.Form = function()
-{
+Qk.Form = function() {
     var showAlert = function(message) { return Xrm.Utility.alertDialog(message) };
 
     var showConfirm = function(message) { return Xrm.Utility.confirmDialog(message) };
@@ -315,8 +310,7 @@ Qk.Form = function()
 // <summary>
 // Namespace to do operations with the tab and its elements.
 // </summary>
-Qk.Tab = function(tabSelector)
-{
+Qk.Tab = function(tabSelector) {
     
     var tabName = tabSelector;
 
@@ -383,8 +377,7 @@ Qk.Tab = function(tabSelector)
 // <summary>
 // Namespace to do operations with the section and its elements.
 // </summary>
-Qk.Section = function(sectionLabelParam)
-{
+Qk.Section = function(sectionLabelParam) {
     var sectionLabel = sectionLabelParam;    
 
     // Common methods.
@@ -455,8 +448,7 @@ Qk.Section = function(sectionLabelParam)
 // <summary>
 // Namespace to do common operations.
 // </summary>
-Qk.Utilities = function()
-{
+Qk.Utilities = function() {
     var areGuidEqual = function(guid1, guid2)
     {
         if (guid1.toLowerCase() === guid2.toLowerCase()) return true;
@@ -528,8 +520,7 @@ Qk.Utilities = function()
 // <summary>
 // Lookup Class to manage this type of attribute.
 // </summary>
-function Lookup(entityType, name, id)
-{
+function Lookup(entityType, name, id) {
     var object = {
         entityType: entityType,
         name: name,
