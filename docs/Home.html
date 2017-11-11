@@ -1,0 +1,36 @@
+<div class="wikidoc">
+<p>Quick CRM is an easy-to-use library to develope quickly Javascripts in Dynamics CRM Forms.<br>
+<br>
+<strong>The <em>problem</em></strong><br>
+<br>
+Many times we have to write some long code with de Javscript SDK:</p>
+<pre>var value = Xrm.Page.getAttribute('name').getValue();
+var isDirty = Xrm.Page.data.entity.getIsDirty();
+Xrm.Page.getAttribute('name').setDisable(true);
+<br>// Hide 4 fields.<br>var fields = ['name', 'telephone1', 'primarycontactid', 'fax'];
+for (var i = 0; i &lt; fields.length; i&#43;&#43;)
+    Xrm.Page.getControl(fields[i]).setVisible(false)</pre>
+<p><br>
+Code a bit ugly to see. <br>
+<br>
+<strong>The proposal</strong><br>
+<br>
+Quick CRM wants to help developers to write code at three key points:</p>
+<ol>
+<li>Code more legible. </li><li>Semantic approach. </li><li>Reduce use of parameters. </li></ol>
+<p><br>
+The structure of the library is based in form elements.&nbsp;That means we have to focus in elements and access then by a&nbsp;fast way.</p>
+<p><strong>Examples</strong></p>
+<pre>// Having 4 fields/controls to hide.<br>var fields = ['name', 'telephone1', 'primarycontactid', 'fax'];
+
+// Traditionally:
+for (var i = 0; i &lt; fields.length; i&#43;&#43;)
+    Xrm.Page.getControl(campos[i]).setVisible(false)
+
+// By QuickCrm:
+Qk.Field(fields).Hide();<br><br>// How to disablle all controls in a section:<br>Qk.Section('section name').DisableAllControls()<br><br>// Get the id of the entity that is the form about:<br>Qk.Entity.Id<br><br></pre>
+<p>&nbsp;</p>
+<p>This first version is beta and&nbsp;it needs to be&nbsp;improve a lot. Nowadays there are still many functions and utilities to support.</p>
+<p>Quick CRM <strong>do not support</strong> CRUD operations.</p>
+<p>I hope it helps you. Thank you so much for your feedback! :)</p>
+</div><div class="ClearBoth"></div>
